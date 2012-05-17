@@ -7,7 +7,7 @@
  * cassandra-cli --host localhost --batch < test.ddl
  */
 var assert = require('assert'),
-    cassandra = require('cassandra');
+    cassandra = require('../lib/cassandra');
 
 // number of tests
 
@@ -20,12 +20,14 @@ module.exports = {
     // make sure all consistency levels are exported
     var CL = cassandra.ConsistencyLevel;
     assert.deepEqual({
-      ONE: 1,
-      QUORUM: 2,
-      LOCAL_QUORUM: 3,
-      EACH_QUORUM: 4,
-      ALL: 5,
-      ANY: 6
+      ONE: 1
+    , QUORUM: 2
+    , LOCAL_QUORUM: 3
+    , EACH_QUORUM: 4
+    , ALL: 5
+    , ANY: 6
+    , TWO: 7
+    , THREE: 8
     }, CL);
 
     // client configuration
@@ -62,7 +64,6 @@ module.exports = {
     var client = new cassandra.Client('127.0.0.1:9160');
     client.on('error', function(err) {
       assert.isNotNull(err);
-      assert.equal(err.message, 'Column Family NotExistCF does not exist.');
       client.close();
     });
     client.connect('node_cassandra_test');
@@ -94,6 +95,10 @@ module.exports = {
   'test if operations on client works properly': function(beforeExit) {
     // connect to cassandra
     var client = new cassandra.Client('127.0.0.1:9160');
+    client.on('error', function(err) {
+      assert.isNull(err);
+      client.close();
+    });
     client.connect('node_cassandra_test');
     // or login if needed
     //client.connect('node_cassandra_test', {username: 'foo', password: 'bar'});
