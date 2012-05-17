@@ -138,7 +138,7 @@ Cassandra_login_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_set_keyspace_args = function(args) {
+var Cassandra_set_keyspace_args = function(args) {
   this.keyspace = null;
   if (args) {
     if (args.keyspace !== undefined) {
@@ -191,7 +191,7 @@ Cassandra_set_keyspace_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_set_keyspace_result = function(args) {
+var Cassandra_set_keyspace_result = function(args) {
   this.ire = null;
   if (args instanceof ttypes.InvalidRequestException) {
     this.ire = args;
@@ -249,7 +249,7 @@ Cassandra_set_keyspace_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_get_args = function(args) {
+var Cassandra_get_args = function(args) {
   this.key = null;
   this.column_path = null;
   this.consistency_level = 1;
@@ -332,7 +332,7 @@ Cassandra_get_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_get_result = function(args) {
+var Cassandra_get_result = function(args) {
   this.success = null;
   this.ire = null;
   this.nfe = null;
@@ -467,7 +467,7 @@ Cassandra_get_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_get_slice_args = function(args) {
+var Cassandra_get_slice_args = function(args) {
   this.key = null;
   this.column_parent = null;
   this.predicate = null;
@@ -567,7 +567,7 @@ Cassandra_get_slice_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_get_slice_result = function(args) {
+var Cassandra_get_slice_result = function(args) {
   this.success = null;
   this.ire = null;
   this.ue = null;
@@ -703,7 +703,7 @@ Cassandra_get_slice_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_get_count_args = function(args) {
+var Cassandra_get_count_args = function(args) {
   this.key = null;
   this.column_parent = null;
   this.predicate = null;
@@ -803,7 +803,7 @@ Cassandra_get_count_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_get_count_result = function(args) {
+var Cassandra_get_count_result = function(args) {
   this.success = null;
   this.ire = null;
   this.ue = null;
@@ -916,7 +916,7 @@ Cassandra_get_count_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_multiget_slice_args = function(args) {
+var Cassandra_multiget_slice_args = function(args) {
   this.keys = null;
   this.column_parent = null;
   this.predicate = null;
@@ -1038,7 +1038,7 @@ Cassandra_multiget_slice_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_multiget_slice_result = function(args) {
+var Cassandra_multiget_slice_result = function(args) {
   this.success = null;
   this.ire = null;
   this.ue = null;
@@ -1201,7 +1201,7 @@ Cassandra_multiget_slice_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_multiget_count_args = function(args) {
+var Cassandra_multiget_count_args = function(args) {
   this.keys = null;
   this.column_parent = null;
   this.predicate = null;
@@ -1323,7 +1323,7 @@ Cassandra_multiget_count_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_multiget_count_result = function(args) {
+var Cassandra_multiget_count_result = function(args) {
   this.success = null;
   this.ire = null;
   this.ue = null;
@@ -1463,7 +1463,7 @@ Cassandra_multiget_count_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_get_range_slices_args = function(args) {
+var Cassandra_get_range_slices_args = function(args) {
   this.column_parent = null;
   this.predicate = null;
   this.range = null;
@@ -1564,7 +1564,7 @@ Cassandra_get_range_slices_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_get_range_slices_result = function(args) {
+var Cassandra_get_range_slices_result = function(args) {
   this.success = null;
   this.ire = null;
   this.ue = null;
@@ -1700,7 +1700,7 @@ Cassandra_get_range_slices_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_get_indexed_slices_args = function(args) {
+var Cassandra_get_indexed_slices_args = function(args) {
   this.column_parent = null;
   this.index_clause = null;
   this.column_predicate = null;
@@ -1801,7 +1801,7 @@ Cassandra_get_indexed_slices_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_get_indexed_slices_result = function(args) {
+var Cassandra_get_indexed_slices_result = function(args) {
   this.success = null;
   this.ire = null;
   this.ue = null;
@@ -1937,7 +1937,7 @@ Cassandra_get_indexed_slices_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_insert_args = function(args) {
+var Cassandra_insert_args = function(args) {
   this.key = null;
   this.column_parent = null;
   this.column = null;
@@ -2037,7 +2037,7 @@ Cassandra_insert_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_insert_result = function(args) {
+var Cassandra_insert_result = function(args) {
   this.ire = null;
   this.ue = null;
   this.te = null;
@@ -2134,7 +2134,7 @@ Cassandra_insert_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_add_args = function(args) {
+var Cassandra_add_args = function(args) {
   this.key = null;
   this.column_parent = null;
   this.column = null;
@@ -2234,7 +2234,7 @@ Cassandra_add_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_add_result = function(args) {
+var Cassandra_add_result = function(args) {
   this.ire = null;
   this.ue = null;
   this.te = null;
@@ -2331,7 +2331,7 @@ Cassandra_add_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_remove_args = function(args) {
+var Cassandra_remove_args = function(args) {
   this.key = null;
   this.column_path = null;
   this.timestamp = null;
@@ -2430,7 +2430,7 @@ Cassandra_remove_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_remove_result = function(args) {
+var Cassandra_remove_result = function(args) {
   this.ire = null;
   this.ue = null;
   this.te = null;
@@ -2527,7 +2527,7 @@ Cassandra_remove_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_remove_counter_args = function(args) {
+var Cassandra_remove_counter_args = function(args) {
   this.key = null;
   this.path = null;
   this.consistency_level = 1;
@@ -2610,7 +2610,7 @@ Cassandra_remove_counter_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_remove_counter_result = function(args) {
+var Cassandra_remove_counter_result = function(args) {
   this.ire = null;
   this.ue = null;
   this.te = null;
@@ -2707,7 +2707,7 @@ Cassandra_remove_counter_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_batch_mutate_args = function(args) {
+var Cassandra_batch_mutate_args = function(args) {
   this.mutation_map = null;
   this.consistency_level = 1;
   if (args) {
@@ -2850,7 +2850,7 @@ Cassandra_batch_mutate_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_batch_mutate_result = function(args) {
+var Cassandra_batch_mutate_result = function(args) {
   this.ire = null;
   this.ue = null;
   this.te = null;
@@ -2947,7 +2947,7 @@ Cassandra_batch_mutate_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_truncate_args = function(args) {
+var Cassandra_truncate_args = function(args) {
   this.cfname = null;
   if (args) {
     if (args.cfname !== undefined) {
@@ -3000,7 +3000,7 @@ Cassandra_truncate_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_truncate_result = function(args) {
+var Cassandra_truncate_result = function(args) {
   this.ire = null;
   this.ue = null;
   this.te = null;
@@ -3097,7 +3097,7 @@ Cassandra_truncate_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_schema_versions_args = function(args) {
+var Cassandra_describe_schema_versions_args = function(args) {
 };
 Cassandra_describe_schema_versions_args.prototype = {};
 Cassandra_describe_schema_versions_args.prototype.read = function(input) {
@@ -3125,7 +3125,7 @@ Cassandra_describe_schema_versions_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_schema_versions_result = function(args) {
+var Cassandra_describe_schema_versions_result = function(args) {
   this.success = null;
   this.ire = null;
   if (args instanceof ttypes.InvalidRequestException) {
@@ -3245,7 +3245,7 @@ Cassandra_describe_schema_versions_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_keyspaces_args = function(args) {
+var Cassandra_describe_keyspaces_args = function(args) {
 };
 Cassandra_describe_keyspaces_args.prototype = {};
 Cassandra_describe_keyspaces_args.prototype.read = function(input) {
@@ -3273,7 +3273,7 @@ Cassandra_describe_keyspaces_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_keyspaces_result = function(args) {
+var Cassandra_describe_keyspaces_result = function(args) {
   this.success = null;
   this.ire = null;
   if (args instanceof ttypes.InvalidRequestException) {
@@ -3367,7 +3367,7 @@ Cassandra_describe_keyspaces_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_cluster_name_args = function(args) {
+var Cassandra_describe_cluster_name_args = function(args) {
 };
 Cassandra_describe_cluster_name_args.prototype = {};
 Cassandra_describe_cluster_name_args.prototype.read = function(input) {
@@ -3395,7 +3395,7 @@ Cassandra_describe_cluster_name_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_cluster_name_result = function(args) {
+var Cassandra_describe_cluster_name_result = function(args) {
   this.success = null;
   if (args) {
     if (args.success !== undefined) {
@@ -3448,7 +3448,7 @@ Cassandra_describe_cluster_name_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_version_args = function(args) {
+var Cassandra_describe_version_args = function(args) {
 };
 Cassandra_describe_version_args.prototype = {};
 Cassandra_describe_version_args.prototype.read = function(input) {
@@ -3476,7 +3476,7 @@ Cassandra_describe_version_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_version_result = function(args) {
+var Cassandra_describe_version_result = function(args) {
   this.success = null;
   if (args) {
     if (args.success !== undefined) {
@@ -3529,7 +3529,7 @@ Cassandra_describe_version_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_ring_args = function(args) {
+var Cassandra_describe_ring_args = function(args) {
   this.keyspace = null;
   if (args) {
     if (args.keyspace !== undefined) {
@@ -3582,7 +3582,7 @@ Cassandra_describe_ring_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_ring_result = function(args) {
+var Cassandra_describe_ring_result = function(args) {
   this.success = null;
   this.ire = null;
   if (args instanceof ttypes.InvalidRequestException) {
@@ -3676,7 +3676,7 @@ Cassandra_describe_ring_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_partitioner_args = function(args) {
+var Cassandra_describe_partitioner_args = function(args) {
 };
 Cassandra_describe_partitioner_args.prototype = {};
 Cassandra_describe_partitioner_args.prototype.read = function(input) {
@@ -3704,7 +3704,7 @@ Cassandra_describe_partitioner_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_partitioner_result = function(args) {
+var Cassandra_describe_partitioner_result = function(args) {
   this.success = null;
   if (args) {
     if (args.success !== undefined) {
@@ -3757,7 +3757,7 @@ Cassandra_describe_partitioner_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_snitch_args = function(args) {
+var Cassandra_describe_snitch_args = function(args) {
 };
 Cassandra_describe_snitch_args.prototype = {};
 Cassandra_describe_snitch_args.prototype.read = function(input) {
@@ -3785,7 +3785,7 @@ Cassandra_describe_snitch_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_snitch_result = function(args) {
+var Cassandra_describe_snitch_result = function(args) {
   this.success = null;
   if (args) {
     if (args.success !== undefined) {
@@ -3838,7 +3838,7 @@ Cassandra_describe_snitch_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_keyspace_args = function(args) {
+var Cassandra_describe_keyspace_args = function(args) {
   this.keyspace = null;
   if (args) {
     if (args.keyspace !== undefined) {
@@ -3891,7 +3891,7 @@ Cassandra_describe_keyspace_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_keyspace_result = function(args) {
+var Cassandra_describe_keyspace_result = function(args) {
   this.success = null;
   this.nfe = null;
   this.ire = null;
@@ -3984,7 +3984,7 @@ Cassandra_describe_keyspace_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_splits_args = function(args) {
+var Cassandra_describe_splits_args = function(args) {
   this.cfName = null;
   this.start_token = null;
   this.end_token = null;
@@ -4082,7 +4082,7 @@ Cassandra_describe_splits_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_describe_splits_result = function(args) {
+var Cassandra_describe_splits_result = function(args) {
   this.success = null;
   this.ire = null;
   if (args instanceof ttypes.InvalidRequestException) {
@@ -4175,7 +4175,7 @@ Cassandra_describe_splits_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_add_column_family_args = function(args) {
+var Cassandra_system_add_column_family_args = function(args) {
   this.cf_def = null;
   if (args) {
     if (args.cf_def !== undefined) {
@@ -4229,7 +4229,7 @@ Cassandra_system_add_column_family_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_add_column_family_result = function(args) {
+var Cassandra_system_add_column_family_result = function(args) {
   this.success = null;
   this.ire = null;
   this.sde = null;
@@ -4321,7 +4321,7 @@ Cassandra_system_add_column_family_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_drop_column_family_args = function(args) {
+var Cassandra_system_drop_column_family_args = function(args) {
   this.column_family = null;
   if (args) {
     if (args.column_family !== undefined) {
@@ -4374,7 +4374,7 @@ Cassandra_system_drop_column_family_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_drop_column_family_result = function(args) {
+var Cassandra_system_drop_column_family_result = function(args) {
   this.success = null;
   this.ire = null;
   this.sde = null;
@@ -4466,7 +4466,7 @@ Cassandra_system_drop_column_family_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_add_keyspace_args = function(args) {
+var Cassandra_system_add_keyspace_args = function(args) {
   this.ks_def = null;
   if (args) {
     if (args.ks_def !== undefined) {
@@ -4520,7 +4520,7 @@ Cassandra_system_add_keyspace_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_add_keyspace_result = function(args) {
+var Cassandra_system_add_keyspace_result = function(args) {
   this.success = null;
   this.ire = null;
   this.sde = null;
@@ -4612,7 +4612,7 @@ Cassandra_system_add_keyspace_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_drop_keyspace_args = function(args) {
+var Cassandra_system_drop_keyspace_args = function(args) {
   this.keyspace = null;
   if (args) {
     if (args.keyspace !== undefined) {
@@ -4665,7 +4665,7 @@ Cassandra_system_drop_keyspace_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_drop_keyspace_result = function(args) {
+var Cassandra_system_drop_keyspace_result = function(args) {
   this.success = null;
   this.ire = null;
   this.sde = null;
@@ -4757,7 +4757,7 @@ Cassandra_system_drop_keyspace_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_update_keyspace_args = function(args) {
+var Cassandra_system_update_keyspace_args = function(args) {
   this.ks_def = null;
   if (args) {
     if (args.ks_def !== undefined) {
@@ -4811,7 +4811,7 @@ Cassandra_system_update_keyspace_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_update_keyspace_result = function(args) {
+var Cassandra_system_update_keyspace_result = function(args) {
   this.success = null;
   this.ire = null;
   this.sde = null;
@@ -4903,7 +4903,7 @@ Cassandra_system_update_keyspace_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_update_column_family_args = function(args) {
+var Cassandra_system_update_column_family_args = function(args) {
   this.cf_def = null;
   if (args) {
     if (args.cf_def !== undefined) {
@@ -4957,7 +4957,7 @@ Cassandra_system_update_column_family_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_system_update_column_family_result = function(args) {
+var Cassandra_system_update_column_family_result = function(args) {
   this.success = null;
   this.ire = null;
   this.sde = null;
@@ -5049,7 +5049,7 @@ Cassandra_system_update_column_family_result.prototype.write = function(output) 
   return;
 };
 
-Cassandra_execute_cql_query_args = function(args) {
+var Cassandra_execute_cql_query_args = function(args) {
   this.query = null;
   this.compression = null;
   if (args) {
@@ -5115,7 +5115,7 @@ Cassandra_execute_cql_query_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_execute_cql_query_result = function(args) {
+var Cassandra_execute_cql_query_result = function(args) {
   this.success = null;
   this.ire = null;
   this.ue = null;
@@ -5250,7 +5250,7 @@ Cassandra_execute_cql_query_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_prepare_cql_query_args = function(args) {
+var Cassandra_prepare_cql_query_args = function(args) {
   this.query = null;
   this.compression = null;
   if (args) {
@@ -5316,7 +5316,7 @@ Cassandra_prepare_cql_query_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_prepare_cql_query_result = function(args) {
+var Cassandra_prepare_cql_query_result = function(args) {
   this.success = null;
   this.ire = null;
   if (args instanceof ttypes.InvalidRequestException) {
@@ -5388,7 +5388,7 @@ Cassandra_prepare_cql_query_result.prototype.write = function(output) {
   return;
 };
 
-Cassandra_execute_prepared_cql_query_args = function(args) {
+var Cassandra_execute_prepared_cql_query_args = function(args) {
   this.itemId = null;
   this.values = null;
   if (args) {
@@ -5476,7 +5476,7 @@ Cassandra_execute_prepared_cql_query_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_execute_prepared_cql_query_result = function(args) {
+var Cassandra_execute_prepared_cql_query_result = function(args) {
   this.success = null;
   this.ire = null;
   this.ue = null;
