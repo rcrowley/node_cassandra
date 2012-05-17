@@ -9,13 +9,15 @@
 var assert = require('assert'),
     cassandra = require('../lib/cassandra');
 
+var address = process.env.CASSANDRA_ADDRESS || address
+
 // number of tests
 
 module.exports = {
 
   'test if ConsistencyLevel is exported properly': function() {
     // connect to cassandra
-    var client = new cassandra.Client('127.0.0.1:9160');
+    var client = new cassandra.Client(address);
 
     // make sure all consistency levels are exported
     var CL = cassandra.ConsistencyLevel;
@@ -51,7 +53,7 @@ module.exports = {
 
   'test connecting keyspace that does not exist throws error': function() {
     // connect to cassandra
-    var client = new cassandra.Client('127.0.0.1:9160');
+    var client = new cassandra.Client(address);
     client.on('error', function(err) {
       assert.isNotNull(err);
       client.close();
@@ -61,7 +63,7 @@ module.exports = {
 
   'test if accessing ColumnFamily that does not exist throws error': function() {
     // connect to cassandra
-    var client = new cassandra.Client('127.0.0.1:9160');
+    var client = new cassandra.Client(address);
     client.on('error', function(err) {
       assert.isNotNull(err);
       client.close();
@@ -73,7 +75,7 @@ module.exports = {
   /*
   'test if truncate works': function() {
     // connect to cassandra
-    var client = new cassandra.Client('127.0.0.1:9160');
+    var client = new cassandra.Client(address);
     client.on('error', function(err) {
       assert.fail(err.message);
     });
@@ -94,7 +96,7 @@ module.exports = {
 
   'test if operations on client works properly': function(beforeExit) {
     // connect to cassandra
-    var client = new cassandra.Client('127.0.0.1:9160');
+    var client = new cassandra.Client(address);
     client.on('error', function(err) {
       assert.isNull(err);
       client.close();
