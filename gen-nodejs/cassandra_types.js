@@ -35,7 +35,7 @@ ttypes.CqlResultType = {
 'VOID' : 2,
 'INT' : 3
 };
-Column = module.exports.Column = function(args) {
+var Column = module.exports.Column = function(args) {
   this.name = null;
   this.value = null;
   this.timestamp = null;
@@ -133,7 +133,7 @@ Column.prototype.write = function(output) {
   return;
 };
 
-SuperColumn = module.exports.SuperColumn = function(args) {
+var SuperColumn = module.exports.SuperColumn = function(args) {
   this.name = null;
   this.columns = null;
   if (args) {
@@ -222,7 +222,7 @@ SuperColumn.prototype.write = function(output) {
   return;
 };
 
-CounterColumn = module.exports.CounterColumn = function(args) {
+var CounterColumn = module.exports.CounterColumn = function(args) {
   this.name = null;
   this.value = null;
   if (args) {
@@ -288,7 +288,7 @@ CounterColumn.prototype.write = function(output) {
   return;
 };
 
-CounterSuperColumn = module.exports.CounterSuperColumn = function(args) {
+var CounterSuperColumn = module.exports.CounterSuperColumn = function(args) {
   this.name = null;
   this.columns = null;
   if (args) {
@@ -377,7 +377,7 @@ CounterSuperColumn.prototype.write = function(output) {
   return;
 };
 
-ColumnOrSuperColumn = module.exports.ColumnOrSuperColumn = function(args) {
+var ColumnOrSuperColumn = module.exports.ColumnOrSuperColumn = function(args) {
   this.column = null;
   this.super_column = null;
   this.counter_column = null;
@@ -479,7 +479,7 @@ ColumnOrSuperColumn.prototype.write = function(output) {
   return;
 };
 
-NotFoundException = module.exports.NotFoundException = function(args) {
+var NotFoundException = module.exports.NotFoundException = function(args) {
   Thrift.TException.call(this, "NotFoundException")
   this.name = "NotFoundException"
 };
@@ -510,7 +510,7 @@ NotFoundException.prototype.write = function(output) {
   return;
 };
 
-InvalidRequestException = module.exports.InvalidRequestException = function(args) {
+var InvalidRequestException = module.exports.InvalidRequestException = function(args) {
   Thrift.TException.call(this, "InvalidRequestException")
   this.name = "InvalidRequestException"
   this.why = null;
@@ -566,7 +566,7 @@ InvalidRequestException.prototype.write = function(output) {
   return;
 };
 
-UnavailableException = module.exports.UnavailableException = function(args) {
+var UnavailableException = module.exports.UnavailableException = function(args) {
   Thrift.TException.call(this, "UnavailableException")
   this.name = "UnavailableException"
 };
@@ -597,7 +597,7 @@ UnavailableException.prototype.write = function(output) {
   return;
 };
 
-TimedOutException = module.exports.TimedOutException = function(args) {
+var TimedOutException = module.exports.TimedOutException = function(args) {
   Thrift.TException.call(this, "TimedOutException")
   this.name = "TimedOutException"
 };
@@ -628,7 +628,7 @@ TimedOutException.prototype.write = function(output) {
   return;
 };
 
-AuthenticationException = module.exports.AuthenticationException = function(args) {
+var AuthenticationException = module.exports.AuthenticationException = function(args) {
   Thrift.TException.call(this, "AuthenticationException")
   this.name = "AuthenticationException"
   this.why = null;
@@ -684,7 +684,7 @@ AuthenticationException.prototype.write = function(output) {
   return;
 };
 
-AuthorizationException = module.exports.AuthorizationException = function(args) {
+var AuthorizationException = module.exports.AuthorizationException = function(args) {
   Thrift.TException.call(this, "AuthorizationException")
   this.name = "AuthorizationException"
   this.why = null;
@@ -740,7 +740,7 @@ AuthorizationException.prototype.write = function(output) {
   return;
 };
 
-SchemaDisagreementException = module.exports.SchemaDisagreementException = function(args) {
+var SchemaDisagreementException = module.exports.SchemaDisagreementException = function(args) {
   Thrift.TException.call(this, "SchemaDisagreementException")
   this.name = "SchemaDisagreementException"
 };
@@ -771,7 +771,7 @@ SchemaDisagreementException.prototype.write = function(output) {
   return;
 };
 
-ColumnParent = module.exports.ColumnParent = function(args) {
+var ColumnParent = module.exports.ColumnParent = function(args) {
   this.column_family = null;
   this.super_column = null;
   if (args) {
@@ -837,7 +837,7 @@ ColumnParent.prototype.write = function(output) {
   return;
 };
 
-ColumnPath = module.exports.ColumnPath = function(args) {
+var ColumnPath = module.exports.ColumnPath = function(args) {
   this.column_family = null;
   this.super_column = null;
   this.column = null;
@@ -919,7 +919,7 @@ ColumnPath.prototype.write = function(output) {
   return;
 };
 
-SliceRange = module.exports.SliceRange = function(args) {
+var SliceRange = module.exports.SliceRange = function(args) {
   this.start = null;
   this.finish = null;
   this.reversed = false;
@@ -1017,7 +1017,7 @@ SliceRange.prototype.write = function(output) {
   return;
 };
 
-SlicePredicate = module.exports.SlicePredicate = function(args) {
+var SlicePredicate = module.exports.SlicePredicate = function(args) {
   this.column_names = null;
   this.slice_range = null;
   if (args) {
@@ -1106,7 +1106,7 @@ SlicePredicate.prototype.write = function(output) {
   return;
 };
 
-IndexExpression = module.exports.IndexExpression = function(args) {
+var IndexExpression = module.exports.IndexExpression = function(args) {
   this.column_name = null;
   this.op = null;
   this.value = null;
@@ -1188,7 +1188,7 @@ IndexExpression.prototype.write = function(output) {
   return;
 };
 
-IndexClause = module.exports.IndexClause = function(args) {
+var IndexClause = module.exports.IndexClause = function(args) {
   this.expressions = null;
   this.start_key = null;
   this.count = 100;
@@ -1293,7 +1293,7 @@ IndexClause.prototype.write = function(output) {
   return;
 };
 
-KeyRange = module.exports.KeyRange = function(args) {
+var KeyRange = module.exports.KeyRange = function(args) {
   this.start_key = null;
   this.end_key = null;
   this.start_token = null;
@@ -1407,7 +1407,7 @@ KeyRange.prototype.write = function(output) {
   return;
 };
 
-KeySlice = module.exports.KeySlice = function(args) {
+var KeySlice = module.exports.KeySlice = function(args) {
   this.key = null;
   this.columns = null;
   if (args) {
@@ -1496,7 +1496,7 @@ KeySlice.prototype.write = function(output) {
   return;
 };
 
-KeyCount = module.exports.KeyCount = function(args) {
+var KeyCount = module.exports.KeyCount = function(args) {
   this.key = null;
   this.count = null;
   if (args) {
@@ -1562,7 +1562,7 @@ KeyCount.prototype.write = function(output) {
   return;
 };
 
-Deletion = module.exports.Deletion = function(args) {
+var Deletion = module.exports.Deletion = function(args) {
   this.timestamp = null;
   this.super_column = null;
   this.predicate = null;
@@ -1645,7 +1645,7 @@ Deletion.prototype.write = function(output) {
   return;
 };
 
-Mutation = module.exports.Mutation = function(args) {
+var Mutation = module.exports.Mutation = function(args) {
   this.column_or_supercolumn = null;
   this.deletion = null;
   if (args) {
@@ -1713,7 +1713,7 @@ Mutation.prototype.write = function(output) {
   return;
 };
 
-EndpointDetails = module.exports.EndpointDetails = function(args) {
+var EndpointDetails = module.exports.EndpointDetails = function(args) {
   this.host = null;
   this.datacenter = null;
   this.rack = null;
@@ -1795,7 +1795,7 @@ EndpointDetails.prototype.write = function(output) {
   return;
 };
 
-TokenRange = module.exports.TokenRange = function(args) {
+var TokenRange = module.exports.TokenRange = function(args) {
   this.start_token = null;
   this.end_token = null;
   this.endpoints = null;
@@ -1976,7 +1976,7 @@ TokenRange.prototype.write = function(output) {
   return;
 };
 
-AuthenticationRequest = module.exports.AuthenticationRequest = function(args) {
+var AuthenticationRequest = module.exports.AuthenticationRequest = function(args) {
   this.credentials = null;
   if (args) {
     if (args.credentials !== undefined) {
@@ -2056,7 +2056,7 @@ AuthenticationRequest.prototype.write = function(output) {
   return;
 };
 
-ColumnDef = module.exports.ColumnDef = function(args) {
+var ColumnDef = module.exports.ColumnDef = function(args) {
   this.name = null;
   this.validation_class = null;
   this.index_type = null;
@@ -2197,7 +2197,7 @@ ColumnDef.prototype.write = function(output) {
   return;
 };
 
-CfDef = module.exports.CfDef = function(args) {
+var CfDef = module.exports.CfDef = function(args) {
   this.keyspace = null;
   this.name = null;
   this.column_type = 'Standard';
@@ -2644,7 +2644,7 @@ CfDef.prototype.write = function(output) {
   return;
 };
 
-KsDef = module.exports.KsDef = function(args) {
+var KsDef = module.exports.KsDef = function(args) {
   this.name = null;
   this.strategy_class = null;
   this.strategy_options = null;
@@ -2824,7 +2824,7 @@ KsDef.prototype.write = function(output) {
   return;
 };
 
-CqlRow = module.exports.CqlRow = function(args) {
+var CqlRow = module.exports.CqlRow = function(args) {
   this.key = null;
   this.columns = null;
   if (args) {
@@ -2913,7 +2913,7 @@ CqlRow.prototype.write = function(output) {
   return;
 };
 
-CqlMetadata = module.exports.CqlMetadata = function(args) {
+var CqlMetadata = module.exports.CqlMetadata = function(args) {
   this.name_types = null;
   this.value_types = null;
   this.default_name_type = null;
@@ -3065,7 +3065,7 @@ CqlMetadata.prototype.write = function(output) {
   return;
 };
 
-CqlResult = module.exports.CqlResult = function(args) {
+var CqlResult = module.exports.CqlResult = function(args) {
   this.type = null;
   this.rows = null;
   this.num = null;
@@ -3187,7 +3187,7 @@ CqlResult.prototype.write = function(output) {
   return;
 };
 
-CqlPreparedResult = module.exports.CqlPreparedResult = function(args) {
+var CqlPreparedResult = module.exports.CqlPreparedResult = function(args) {
   this.itemId = null;
   this.count = null;
   if (args) {

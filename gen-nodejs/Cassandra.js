@@ -8,7 +8,7 @@ var Thrift = require('thrift').Thrift;
 var ttypes = require('./cassandra_types');
 //HELPER FUNCTIONS AND STRUCTURES
 
-Cassandra_login_args = function(args) {
+var Cassandra_login_args = function(args) {
   this.auth_request = null;
   if (args) {
     if (args.auth_request !== undefined) {
@@ -62,7 +62,7 @@ Cassandra_login_args.prototype.write = function(output) {
   return;
 };
 
-Cassandra_login_result = function(args) {
+var Cassandra_login_result = function(args) {
   this.authnx = null;
   this.authzx = null;
   if (args instanceof ttypes.AuthenticationException) {
@@ -5611,7 +5611,7 @@ Cassandra_execute_prepared_cql_query_result.prototype.write = function(output) {
   return;
 };
 
-CassandraClient = exports.Client = function(output, pClass) {
+var CassandraClient = exports.Client = function(output, pClass) {
     this.output = output;
     this.pClass = pClass;
     this.seqid = 0;
@@ -6958,7 +6958,7 @@ CassandraClient.prototype.recv_execute_prepared_cql_query = function(input,mtype
   }
   return callback('execute_prepared_cql_query failed: unknown result');
 };
-CassandraProcessor = exports.Processor = function(handler) {
+var CassandraProcessor = exports.Processor = function(handler) {
   this._handler = handler
 }
 CassandraProcessor.prototype.process = function(input, output) {
