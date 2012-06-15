@@ -94,7 +94,7 @@ module.exports = {
   },
   */
 
-  'test if operations on client works properly': function(beforeExit) {
+  'test if operations on client works properly': function() {
     // connect to cassandra
     var client = new cassandra.Client(address);
     client.on('error', function(err) {
@@ -318,4 +318,22 @@ module.exports = {
       client.close();
     });
   }
+
+  , 'test enumerating all rows in a column family': function() {
+
+        var client = new cassandra.Client(address)
+        client.on('error', function(error) {
+            assert.isNull(error)
+            client.close()
+        })
+        client.connect('node_cassandra_test')
+
+        client.getColumnFamily('Standard').enumerate(function(error, key, columns, done) {
+            assert.isNull(error)
+            assert.equal('todd', key)
+            assert.deepEqual({}, columns)
+        })
+
+    }
+
 };
