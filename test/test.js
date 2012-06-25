@@ -328,11 +328,24 @@ module.exports = {
         })
         client.connect('node_cassandra_test')
 
-        client.getColumnFamily('Standard').enumerate(function(error, key, columns, done) {
-            assert.isNull(error)
-            assert.equal('todd', key)
-            assert.deepEqual({}, columns)
-        })
+        var fixtures = [
+            ['todd', {}]
+          , ['jesse', {}]
+        ]
+        client.getColumnFamily('Standard').enumerate(
+            function(key, columns, done) {
+                var fixture = fixtures.shift()
+                assert.equal(fixture[0], key)
+                assert.deepEqual(fixture[1], columns)
+                done()
+            }
+          , function() {
+                process.exit(0)
+            }
+          , function(error) {
+                assert.isNull(error)
+            }
+        )
 
     }
 
