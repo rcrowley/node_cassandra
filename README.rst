@@ -49,7 +49,7 @@ For more detailed example, see test/test.js.
 Test
 --------
 
-If you have expresso installed, you can run test with::
+If you have expresso installed, you can run tests with::
 
   $ expresso -I lib
 
